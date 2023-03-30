@@ -28,7 +28,6 @@ use PhpOffice\PhpPresentation\Exception\FeatureNotImplementedException;
 use PhpOffice\PhpPresentation\Exception\FileNotFoundException;
 use PhpOffice\PhpPresentation\Exception\InvalidFileFormatException;
 use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape;
 use PhpOffice\PhpPresentation\Shape\Drawing;
 use PhpOffice\PhpPresentation\Shape\Group;
 use PhpOffice\PhpPresentation\Shape\Hyperlink;
@@ -497,6 +496,10 @@ class PowerPoint97 implements ReaderInterface
     private function loadPicturesStream(): void
     {
         $stream = $this->streamPictures;
+
+        if (empty($stream)) {
+            return;
+        }
 
         $pos = 0;
         do {
