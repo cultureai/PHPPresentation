@@ -22,7 +22,7 @@
         "php": "^7.1|^8.0",
         "ext-xml": "*",
         "ext-zip": "*",
-        "phpoffice/common": "^1",
+        "phpoffice/common": "dev-caibugfix",
         "phpoffice/phpspreadsheet": "^1.9.0"
     },
     "require-dev": {
@@ -30,6 +30,12 @@
         "phpmd/phpmd": "2.*",
         "phpstan/phpstan": "^0.12.88"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:cultureai/PHPOfficeCommon.git"
+        }
+    ],
     "suggest": {
         "ext-gd": "Required to add images"
     },
